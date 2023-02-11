@@ -1,6 +1,4 @@
-Vim-atomic is a dark & light color scheme designed to use on vim, gvim and neovim. It consists of 16 colors selected procedurally (algorithms) and it's part of a bigger project: [Atomic](https://github.com/gerardbm/atomic), which includes themes and color schemes for more code editors (Sublime Text and NetBeans), terminals (URxvt, XTerm, xfce4-terminal and konsole) and some terminal programs (tmux, zsh, irssi, cmus).
-
-Atomic has support for 8, 16 and 256 colors, and *True Color* (24 bits) on the last versions of vim, gvim, neovim and nvim-qt. It uses the setting `termguicolors` properly (some color schemes don't).
+Vim-asciiville is a dark & light color scheme designed to use on vim, gvim and neovim. It consists of 16 colors selected procedurally (algorithms). It has support for 8, 16 and 256 colors, and *True Color* (24 bits) on the last versions of vim, gvim, neovim and nvim-qt. It uses the setting `termguicolors` properly (some color schemes don't).
 
 It also includes ten modes of color:
 - Dark blue, soft contrast
@@ -18,18 +16,18 @@ It also includes ten modes of color:
 
 #### Manual installation
 
-1. Copy the file `atomic.vim` to your `~/.vim/colors/` directory (for vim) or `~/.config/nvim/colors/` directory (for neovim).
+1. Copy the file `asciiville.vim` to your `~/.vim/colors/` directory (for vim) or `~/.config/nvim/colors/` directory (for neovim).
 
 ```bash
-$ cd vim-atomic
-$ cp atomic.vim ~/.vim/colors/
+cd vim-asciiville
+cp asciiville.vim ~/.vim/colors/
 ```
 
 #### Using a plugin manager (i.e., [vim-plug](https://github.com/junegunn/vim-plug))
 
 1. Paste this in your `.vimrc` file:
 ```viml
-Plug 'gerardbm/vim-atomic'
+Plug 'gerardbm/vim-asciiville'
 ```
 2. Reload your settings and install it:
 ```viml
@@ -42,16 +40,14 @@ Plug 'gerardbm/vim-atomic'
 1. Set the colorscheme in your `.vimrc` configuration file:
 ```viml
 syntax enable
-colorscheme atomic
+colorscheme asciiville
 ```
 
 ## Configuration
 
 #### Color support
 
-If your terminal does not support *True color*, you can take a look at the main [Atomic](https://github.com/gerardbm/atomic) repository to see if Atomic colors are available for your terminal and how to install them.
-
-If your terminal supports *True color* (1), you can enable it configuring your `~/.vimrc` file with the setting `set termguicolors` (2) **before** the color scheme definition (`colorscheme atomic`).
+If your terminal supports *True color* (1), you can enable it configuring your `~/.vimrc` file with the setting `set termguicolors` (2) **before** the color scheme definition (`colorscheme asciiville`).
 
 ---
 
@@ -75,27 +71,27 @@ More info, see `:h xterm-true-color`.
 
 If your terminal have *True color* support or if you are using a GUI (like gvim or nvim-qt), you have the following commands to switch between the different color palettes:
 
-- (1) `AtomicDarkBlueSoft`: sets the dark blue mode, default contrast.
-- (2) `AtomicDarkBlueHard`: sets the dark blue mode, +5% contrast (background darker).
-- (3) `AtomicDarkCyanSoft`
-- (4) `AtomicDarkCyanHard`
-- (5) `AtomicNightOrangeSoft`
-- (6) `AtomicNightOrangeHard`
-- (7) `AtomicNightRedSoft`
-- (8) `AtomicNightRedHard`
-- (9) `AtomicLightSoft`
-- (10) `AtomicLightHard`
+- (1) `asciivilleDarkBlueSoft`: sets the dark blue mode, default contrast.
+- (2) `asciivilleDarkBlueHard`: sets the dark blue mode, +5% contrast (background darker).
+- (3) `asciivilleDarkCyanSoft`
+- (4) `asciivilleDarkCyanHard`
+- (5) `asciivilleNightOrangeSoft`
+- (6) `asciivilleNightOrangeHard`
+- (7) `asciivilleNightRedSoft`
+- (8) `asciivilleNightRedHard`
+- (9) `asciivilleLightSoft`
+- (10) `asciivilleLightHard`
 
 Use one of them **after** the color scheme definition in your `~/.vimrc` or `~/.gvimrc`.
 
-Switch them automatically depending on the current time. For example, if you would like to use the AtomicLightSoft between 8 am and 8 pm and switch to AtomicNightRedHard at night, simply paste this in your `~/.vimrc` or `~/.gvimrc`:
+Switch them automatically depending on the current time. For example, if you would like to use the asciivilleLightSoft between 8 am and 8 pm and switch to asciivilleNightRedHard at night, simply paste this in your `~/.vimrc` or `~/.gvimrc`:
 
 ```viml
-function! AtomicSwitcher()
+function! asciivilleSwitcher()
 	if (strftime("%H") > 8) && (strftime("%H") < 20)
-		AtomicLightSoft
+		asciivilleLightSoft
 	else
-		AtomicNightRedHard
+		asciivilleNightRedHard
 	endif
 endfunction
 ```
@@ -103,20 +99,20 @@ endfunction
 Alternatively, you can cycle them (from 1 to  10) with a shortcut (for example: <kbd>Shift</kbd>+<kbd>F9</kbd>). Paste this in your `~/.gvimrc` or `~/.gvimrc`:
 
 ```viml
-nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
-vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme atomic<CR>gv
+nnoremap <S-F9> :call CycleModes()<CR>:colorscheme asciiville<CR>
+vnoremap <S-F9> :<C-u>call CycleModes()<CR>:colorscheme asciiville<CR>gv
 ```
 #### Emphasis
 
-Some terminals don't handle italics correctly, so in case you need to disable italics set `let g:atomic_italic=0` in your `~/.vimrc`, **before** the color scheme definition.
+Some terminals don't handle italics correctly, so in case you need to disable italics set `let g:asciiville_italic=0` in your `~/.vimrc`, **before** the color scheme definition.
 
 Full list of options to disable italic text, bold, underline and undercurl:
 
 ```viml
-let g:atomic_italic = 0
-let g:atomic_bold = 0
-let g:atomic_underline = 0
-let g:atomic_undercurl = 0
+let g:asciiville_italic = 0
+let g:asciiville_bold = 0
+let g:asciiville_underline = 0
+let g:asciiville_undercurl = 0
 ```
 
 If this options are not defined, default value is 1 for all of them.
@@ -132,7 +128,7 @@ endif
 
 syntax enable
 
-let g:atomic_italic = 0
-colorscheme atomic
-AtomicNightRedSoft
+let g:asciiville_italic = 0
+colorscheme asciiville
+asciivilleNightRedSoft
 ```

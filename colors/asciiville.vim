@@ -1,16 +1,17 @@
 "----------------------------------------------------------------
-"      ___   __                  _
-"     /   | / /_____  ____ ___  (_)____
-"    / /| |/ __/ __ \/ __ `__ \/ / ___/
-"   / ___ / /_/ /_/ / / / / / / / /__
-"  /_/  |_\__/\____/_/ /_/ /_/_/\___/
-"
+"                         ,e, ,e,           ,e, 888 888           
+"  /~~~8e   d88~\  e88~~\  "   "  Y88b    /  "  888 888  e88~~8e  
+"      88b C888   d888    888 888  Y88b  /  888 888 888 d888  88b 
+" e88~-888  Y88b  8888    888 888   Y88b/   888 888 888 8888__888 
+"C888  888   888D Y888    888 888    Y8/    888 888 888 Y888    , 
+" "88_-888 \_88P   "88__/ 888 888     Y     888 888 888  "88___/  
+"                                                                 
 "----------------------------------------------------------------
-"  Theme   : Atomic
-"  Version : 4.2.1
+"  Theme   : Asciiville
+"  Version : 1.0.0
 "  License : MIT
-"  Author  : Gerard Bajona
-"  URL     : https://github.com/gerardbm/vim-atomic
+"  Author  : Ronald Record
+"  URL     : https://github.com/doctorfree/vim-asciiville
 "----------------------------------------------------------------
 
 " Settings
@@ -24,7 +25,7 @@ if v:version > 580
 	endif
 endif
 
-let g:colors_name = 'atomic'
+let g:colors_name = 'asciiville'
 
 " }}}
 " Palettes: {{{
@@ -32,8 +33,8 @@ let g:colors_name = 'atomic'
 if (has('termguicolors') && &termguicolors) || has('gui_running')
 	let s:envir = 'gui'
 
-	if exists('g:atomic_mode')
-		let s:mode = g:atomic_mode
+	if exists('g:asciiville_mode')
+		let s:mode = g:asciiville_mode
 	else
 		let s:mode = 1
 	endif
@@ -176,50 +177,50 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 	endif
 
 	" Commands
-	command! AtomicDarkBlueSoft        let g:atomic_mode = 1 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicDarkBlueHard        let g:atomic_mode = 2 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicDarkCyanSoft        let g:atomic_mode = 3 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicDarkCyanHard        let g:atomic_mode = 4 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicNightOrangeSoft     let g:atomic_mode = 5 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicNightOrangeHard     let g:atomic_mode = 6 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicNightRedSoft        let g:atomic_mode = 7 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicNightRedHard        let g:atomic_mode = 8 | set background=dark
-				\ | colorscheme atomic
-	command! AtomicLightSoft           let g:atomic_mode = 9 | set background=light
-				\ | colorscheme atomic
-	command! AtomicLightHard           let g:atomic_mode = 10 | set background=light
-				\ | colorscheme atomic
+	command! AsciivilleDarkBlueSoft        let g:asciiville_mode = 1 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleDarkBlueHard        let g:asciiville_mode = 2 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleDarkCyanSoft        let g:asciiville_mode = 3 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleDarkCyanHard        let g:asciiville_mode = 4 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleNightOrangeSoft     let g:asciiville_mode = 5 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleNightOrangeHard     let g:asciiville_mode = 6 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleNightRedSoft        let g:asciiville_mode = 7 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleNightRedHard        let g:asciiville_mode = 8 | set background=dark
+				\ | colorscheme asciiville
+	command! AsciivilleLightSoft           let g:asciiville_mode = 9 | set background=light
+				\ | colorscheme asciiville
+	command! AsciivilleLightHard           let g:asciiville_mode = 10 | set background=light
+				\ | colorscheme asciiville
 
 	function! CycleModes()
-		let s:cycle = g:atomic_mode
+		let s:cycle = g:asciiville_mode
 
 		if s:cycle == 1
-			let g:atomic_mode = 2
+			let g:asciiville_mode = 2
 		elseif s:cycle == 2
-			let g:atomic_mode = 3
+			let g:asciiville_mode = 3
 		elseif s:cycle == 3
-			let g:atomic_mode = 4
+			let g:asciiville_mode = 4
 		elseif s:cycle == 4
-			let g:atomic_mode = 5
+			let g:asciiville_mode = 5
 		elseif s:cycle == 5
-			let g:atomic_mode = 6
+			let g:asciiville_mode = 6
 		elseif s:cycle == 6
-			let g:atomic_mode = 7
+			let g:asciiville_mode = 7
 		elseif s:cycle == 7
-			let g:atomic_mode = 8
+			let g:asciiville_mode = 8
 		elseif s:cycle == 8
-			let g:atomic_mode = 9
+			let g:asciiville_mode = 9
 		elseif s:cycle == 9
-			let g:atomic_mode = 10
+			let g:asciiville_mode = 10
 		elseif s:cycle == 10
-			let g:atomic_mode = 1
+			let g:asciiville_mode = 1
 		endif
 	endfunction
 else
@@ -276,50 +277,50 @@ let s:non = 'NONE'
 let s:rev = 'reverse'
 
 " italic
-if exists('g:atomic_italic')
-	let g:atomic_italic = g:atomic_italic
+if exists('g:asciiville_italic')
+	let g:asciiville_italic = g:asciiville_italic
 else
-	let g:atomic_italic = 1
+	let g:asciiville_italic = 1
 endif
 
 let s:itl = 'italic'
-if g:atomic_italic == 0
+if g:asciiville_italic == 0
 	let s:itl = 'NONE'
 endif
 
 " bold
-if exists('g:atomic_bold')
-	let g:atomic_bold = g:atomic_bold
+if exists('g:asciiville_bold')
+	let g:asciiville_bold = g:asciiville_bold
 else
-	let g:atomic_bold = 1
+	let g:asciiville_bold = 1
 endif
 
 let s:bld = 'bold'
-if g:atomic_bold == 0
+if g:asciiville_bold == 0
 	let s:bld = 'NONE'
 endif
 
 " underline
-if exists('g:atomic_underline')
-	let g:atomic_underline = g:atomic_underline
+if exists('g:asciiville_underline')
+	let g:asciiville_underline = g:asciiville_underline
 else
-	let g:atomic_underline = 1
+	let g:asciiville_underline = 1
 endif
 
 let s:unl = 'underline'
-if g:atomic_underline == 0
+if g:asciiville_underline == 0
 	let s:unl = 'NONE'
 endif
 
 " undercurl
-if exists('g:atomic_undercurl')
-	let g:atomic_undercurl = g:atomic_undercurl
+if exists('g:asciiville_undercurl')
+	let g:asciiville_undercurl = g:asciiville_undercurl
 else
-	let g:atomic_undercurl = 1
+	let g:asciiville_undercurl = 1
 endif
 
 let s:unc = 'undercurl'
-if g:atomic_undercurl == 0
+if g:asciiville_undercurl == 0
 	let s:unc = 'NONE'
 endif
 
