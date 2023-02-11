@@ -71,27 +71,27 @@ More info, see `:h xterm-true-color`.
 
 If your terminal have *True color* support or if you are using a GUI (like gvim or nvim-qt), you have the following commands to switch between the different color palettes:
 
-- (1) `asciivilleDarkBlueSoft`: sets the dark blue mode, default contrast.
-- (2) `asciivilleDarkBlueHard`: sets the dark blue mode, +5% contrast (background darker).
-- (3) `asciivilleDarkCyanSoft`
-- (4) `asciivilleDarkCyanHard`
-- (5) `asciivilleNightOrangeSoft`
-- (6) `asciivilleNightOrangeHard`
-- (7) `asciivilleNightRedSoft`
-- (8) `asciivilleNightRedHard`
-- (9) `asciivilleLightSoft`
-- (10) `asciivilleLightHard`
+- (1) `AsciivilleDarkBlueSoft`: sets the dark blue mode, default contrast.
+- (2) `AsciivilleDarkBlueHard`: sets the dark blue mode, +5% contrast (background darker).
+- (3) `AsciivilleDarkCyanSoft`
+- (4) `AsciivilleDarkCyanHard`
+- (5) `AsciivilleNightOrangeSoft`
+- (6) `AsciivilleNightOrangeHard`
+- (7) `AsciivilleNightRedSoft`
+- (8) `AsciivilleNightRedHard`
+- (9) `AsciivilleLightSoft`
+- (10) `AsciivilleLightHard`
 
 Use one of them **after** the color scheme definition in your `~/.vimrc` or `~/.gvimrc`.
 
-Switch them automatically depending on the current time. For example, if you would like to use the asciivilleLightSoft between 8 am and 8 pm and switch to asciivilleNightRedHard at night, simply paste this in your `~/.vimrc` or `~/.gvimrc`:
+Switch them automatically depending on the current time. For example, if you would like to use the AsciivilleLightSoft between 8 am and 8 pm and switch to AsciivilleNightRedHard at night, simply paste this in your `~/.vimrc` or `~/.gvimrc`:
 
 ```viml
 function! asciivilleSwitcher()
 	if (strftime("%H") > 8) && (strftime("%H") < 20)
-		asciivilleLightSoft
+		AsciivilleLightSoft
 	else
-		asciivilleNightRedHard
+		AsciivilleNightRedHard
 	endif
 endfunction
 ```
@@ -130,5 +130,5 @@ syntax enable
 
 let g:asciiville_italic = 0
 colorscheme asciiville
-asciivilleNightRedSoft
+AsciivilleNightRedSoft
 ```
